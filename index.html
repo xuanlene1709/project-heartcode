@@ -11,6 +11,69 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <style>
+     .navbar {
+        background-color:#00539CFF;
+      }
+      /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 350px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #f2c2cf;
+  color: black;
+}
+.flip-card-front img {
+  height:200px;
+}
+.first-title{
+  color: #ed1818;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #c9f7b0;
+  color: black;
+  transform: rotateY(180deg);
+  vertical-align: middle;
+  text-align: center;
+}
+.second-title{
+  color: #5ae310
+}
+
+.row {
+  justify-content: center;
+}
     h1 {
       color: blue;
     }
@@ -49,6 +112,123 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" href="#">ADHD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Know More
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">What is ADHD?</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Symptoms of ADHD</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Common misconceptions of ADHD</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light">Helplines</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h1 style="text-align: center;"><u>Common misconceptions of ADHD</u></h1>
+  <div class="container">
+    <div class="row">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h1 class="first-title"><u>Myth:</u></h1>
+        <img src="lazy.png">
+        <p style="margin-top:25px">People with ADHD are lazy.</p>
+      </div>
+      <div class="flip-card-back">
+        <h1 class="second-title"><u>Fact:</u></h1>
+        <p style="padding-top:50px">People with ADHD put in a great deal of effort just like any other person, but their brain's difficulty in paying attention, slowing down and being patient hinders them from completing their tasks.</p>
+      </div>
+    </div>
+  </div>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h1 class="first-title"><u>Myth:</u></h1>
+        <img src="5094.png">
+        <p style="margin-top:25px">ADHD is a learning disability.</p>
+      </div>
+      <div class="flip-card-back">
+        <h1 class="second-title"><u>Fact:</u></h1>
+        <p style="padding-top:50px">ADHD is not a learning disability, as it does not affect a person's ability to learn a specific skill set, such as reading, writing, or mathematics. However, some effects of ADHD, such as difficulty concentrating, can lead to some challenges in learning.</p>
+      </div>
+    </div>
+  </div>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h1 class="first-title"><u>Myth:</u></h1>
+        <img src="adhdnarrow.jpg">
+        <p style="margin-top:25px">Only Young Boys get ADHD</p>
+      </div>
+      <div class="flip-card-back">
+        <h1 class="second-title"><u>Fact:</u></h1>
+        <p style="padding-top:90px">Children and adults can have ADHD regardless of gender. </p>
+      </div>
+    </div>
+  </div>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h1 class="first-title"><u>Myth:</u></h1>
+        <img src="43912586f2eff99c03523a1fee6de2a2_09-04-19_08-51-21.jpg">
+        <p style="margin-top:25px">Sugar Causes ADHD</p>
+      </div>
+      <div class="flip-card-back">
+        <h1 class="second-title"><u>Fact:</u></h1>
+        <p style="padding-top:70px">Sugar and highly processed foods do not cause ADHD. It is possible that sugar can affect ADHD symptoms, but scientific evidence so far has been mixed.
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1 class="first-title"><u>Myth:</u></h1>
+          <img src="adhd-caffeine_thumb.webp">
+          <p style="margin-top:25px">Caffeine causes Hyperactivity in Adults with ADHD</p>
+        </div>
+        <div class="flip-card-back">
+          <h1 class="second-title"><u>Fact:</u></h1>
+          <p style="padding-top:50px">While caffeine may make an already over-energized or impulsive person with ADHD feel even more amped up, some adults with ADHD, particularly those who don’t take medication, believe caffeine helps them focus.</p>
+        </div>
+      </div>
+    </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1 class="first-title"><u>Myth:</u></h1>
+            <img src="images.jfif">
+            <p style="margin-top:25px">ADHD is caused by Poor Parenting</p>
+          </div>
+          <div class="flip-card-back">
+            <h1 class="second-title"><u>Fact:</u></h1>
+            <p style="padding-top:50px">There is no strong evidence to support the idea that ADHD is caused by any certain form of parenting. While experts don’t yet fully understand the causes of ADHD, genetics appear to play a significant role.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <h1>Common symptoms about ADHD in children</h1>
     <ul id="hi">
@@ -105,5 +285,4 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
 </body>
-
 </html>
